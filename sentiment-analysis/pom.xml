@@ -15,7 +15,7 @@
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>2.8.2.Final</quarkus.platform.version>
         <ai-djl.version>0.16.0</ai-djl.version>
-        <ai-djl-pytorch.version>1.9.1</ai-djl-pytorch.version>
+        <ai-djl-pytorch.version>1.10.0</ai-djl-pytorch.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>

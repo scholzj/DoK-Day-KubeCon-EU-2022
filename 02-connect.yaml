@@ -179,6 +179,12 @@ spec:
           - type: tgz
             url: https://repo.maven.apache.org/maven2/org/apache/camel/kafkaconnector/camel-twitter-timeline-kafka-connector/0.11.5/camel-twitter-timeline-kafka-connector-0.11.5-package.tar.gz
             sha512sum: 92dadfdc144dd6b88a220b953facb7e0c5cd5752c04a4d84e358a4dac02323f058f05eedb53b30de8b04c47f0a66b175d6a59c35b78f86bab7d8430255716a1a
+      # Uncomment to use the Direct messages instead of sending tweets to your timeline
+      # - name: camel-twitter-direct-messages
+      #   artifacts:
+      #     - type: tgz
+      #       url: https://repo.maven.apache.org/maven2/org/apache/camel/kafkaconnector/camel-twitter-directmessage-kafka-connector/0.11.5/camel-twitter-directmessage-kafka-connector-0.11.5-package.tar.gz
+      #       sha512sum: c58fa4772c3fcc7347b17b080de719f7662cb0fee25046d2599a85de062ce7ba2456a8b85081d2bac893861022afdeb8f16023366a9e1b872084e2fd447f7b6d
   externalConfiguration:
     env:
       - name: TWITTER_CONSUMER_KEY
