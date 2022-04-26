@@ -1,6 +1,6 @@
 # Build your own social media analytics with Apache Kafka
 
-This repository contains the demo files and applications for my conference talk _Build your own social media analytics with Apache Kafka_ at the Data on Kubernetes Day @ KubeCon EU 2022.
+This repository contains the demo files and applications for my conference talk _Build your own social media analytics with Apache Kafka_ at the _Data on Kubernetes Day @ KubeCon EU 2022_.
 
 ## Prerequisites
 
@@ -86,6 +86,8 @@ These commands might be useful when playing with the demo:
 
 ### Reseting the streams applications:
 
+_You can run these against the unsecured listener on port 9095._
+
 1) Stop the application
 
 2) Reset the application context
@@ -95,33 +97,5 @@ These commands might be useful when playing with the demo:
 
 3) Reset the offset
    ```
-   hacking/kafka/bin/kafka-consumer-groups.sh --bootstrap-server <brokerAddress> --group <applicationId> --topic <sourceTopic> --to-earliest --reset-offsets --execute
+   bin/kafka-consumer-groups.sh --bootstrap-server <brokerAddress> --group <applicationId> --topic <sourceTopic> --to-earliest --reset-offsets --execute
    ```
-
-### Reading the tweets with `kafkacat`
-
-```
-kafkacat -G <groupId> -C -b <brokerAddress> -o beginning -t <topic> | jq .text
-```
-
-You can also pipe the output to `jq` to pretty-print the JSON and use `jq` to for example extract the status message:
-
-```
-kafkacat -G <groupId> -C -b <brokerAddress> -o beginning -t <topic> | jq .text
-```
-
-## Recordings
-
-### DevConf.CZ 2022
-
-This talk was presented at [DevConf.CZ 2022](https://devconf.cz/).
-You can have a look at the [slides](https://docs.google.com/presentation/d/1vW_oTDelloUPyTkbDLiNluZXIi5t0wfFWSIDnKapESc/edit?usp=sharing) and the [recording](https://youtu.be/bTxdZOWLyvI) from the conference here:
-
-[![Build your own social media analytics with Apache Kafka - DataCon LA 2021 recording](https://user-images.githubusercontent.com/5658439/152701013-8c18f4fa-18fe-4d5c-a838-10006446a3ab.png)](https://youtu.be/bTxdZOWLyvI "Build your own social media analytics with Apache Kafka - DevConf.CZ 2022 recording")
-
-### DataCon LA 2021
-
-This talk was presented at [DataCon LA 2021](https://www.dataconla.com/).
-You can have a look at the [slides](https://docs.google.com/presentation/d/18bmiZagwrAe8fnuuyBs45l1U5OHIGwK9pjLALpcC23E/edit?usp=sharing) and the [recording](https://youtu.be/niQEglT_nYQ) from the conference here:
-
-[![Build your own social media analytics with Apache Kafka - DataCon LA 2021 recording](https://user-images.githubusercontent.com/5658439/135720151-cde6b04a-d006-4901-a089-487aaf32cac5.png)](http://www.youtube.com/watch?v=niQEglT_nYQ "Build your own social media analytics with Apache Kafka - DataCon LA 2021 recording")

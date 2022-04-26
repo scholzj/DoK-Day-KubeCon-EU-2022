@@ -26,8 +26,8 @@ import java.util.Locale;
 public class TopologyProducer {
     private static final Logger LOG = Logger.getLogger(TopologyProducer.class);
 
-    private static final String SOURCE_TOPIC = "twitter-search";
-    private static final String TARGET_TOPIC = "twitter-alerts";
+    private static final String SOURCE_TOPIC = "twitter-inbox";
+    private static final String TARGET_TOPIC = "twitter-outbox";
 
     private static Predictor<String, Classifications> predictor;
 
@@ -58,15 +58,18 @@ public class TopologyProducer {
                         try {
                             Classifications classifications = predictor.predict(tweet);
 
-                            // We care nly about strong results where probability is > 90%
-                            if (classifications.best().getProbability() > 0.90) {
-                                String statusUrl = "https://twitter.com/" + value.getUser().getScreenName() + "/status/" + value.getId();
-                                String alert = String.format("The following tweet was classified as %s with %2.2f%% probability: %s",
-                                        classifications.best().getClassName().toLowerCase(Locale.ENGLISH),
-                                        classifications.best().getProbability() * 100,
-                                        statusUrl);
+                            String statusUrl = "https://twitter.com/" + value.getUser().getScreenName() + "/status/" + value.getId();
+                            String alert = String.format("The following tweet was classified as %s with %2.2f%% probability: %s",
+                                    classifications.best().getClassName().toLowerCase(Locale.ENGLISH),
+                                    classifications.best().getProbability() * 100,
+                                    statusUrl);
+
+                            // We care only about strong results where probability is > 60%
+                            if (classifications.best().getProbability() > 0.60) {
+                                LOG.infov("Tweeting: {0}", alert);
                                 return List.of(alert);
                             } else {
+                                LOG.infov("Not tweeting: {0}", alert);
                                 return List.of();
                             }
                         } catch (TranslateException e) {

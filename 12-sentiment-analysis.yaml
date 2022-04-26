@@ -13,7 +13,7 @@ spec:
       # Source topic
       - resource:
           type: topic
-          name: twitter-search
+          name: twitter-inbox
         operation: Read
       # Group used by the Kafka Streams app
       - resource:
@@ -23,7 +23,7 @@ spec:
       # Target topic
       - resource:
           type: topic
-          name: twitter-alerts
+          name: twitter-outbox
         operation: Write
 ---
 

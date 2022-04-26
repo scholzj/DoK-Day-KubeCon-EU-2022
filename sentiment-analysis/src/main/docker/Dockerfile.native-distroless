@@ -16,7 +16,7 @@
 ###
 FROM quay.io/quarkus/quarkus-distroless-image:1.0
 
-LABEL org.opencontainers.image.source https://github.com/scholzj/DoK-Day-KubeCon-EU-2022 \
+LABEL org.opencontainers.image.source="https://github.com/scholzj/DoK-Day-KubeCon-EU-2022" \
       summary="Sentiment Analysis" \
       description="Demo for the DoK Day @ KubeCon EU 2022 talk"
 

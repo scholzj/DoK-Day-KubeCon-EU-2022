@@ -23,7 +23,7 @@
 ###
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.3 
 
-LABEL org.opencontainers.image.source https://github.com/scholzj/DoK-Day-KubeCon-EU-2022 \
+LABEL org.opencontainers.image.source="https://github.com/scholzj/DoK-Day-KubeCon-EU-2022" \
       summary="Sentiment Analysis" \
       description="Demo for the DoK Day @ KubeCon EU 2022 talk"
 
