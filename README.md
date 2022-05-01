@@ -1,6 +1,6 @@
 # Build your own social media analytics with Apache Kafka
 
-This repository contains the demo files and applications for my conference talk **Build your own social media analytics with Apache Kafka** at the **[Data on Kubernetes Day @ KubeCon EU 2022](https://dok.community/dok-day-europe-2022-kubecon/)**.
+This repository contains the demo files and applications for my conference talk **Build your own social media analytics with Apache Kafka** at the **[Data on Kubernetes Day @ KubeCon EU 2022](https://dok.community/dok-day-europe-2022-kubecon/)**. The slides are avaiable at [Google Docs](https://docs.google.com/presentation/d/1TVVhEHwGqSlRULrLTJBKJt3BwyBsbdXbV04JpkF1ugo/edit?usp=sharing).
 
 ## Prerequisites
 
